@@ -14,14 +14,14 @@ services:
       - storage:/code/pm4/storage
     links:
       - redis
-      - mysql 
+      - db 
     depends_on:
-      - mysql
-      - redis 
+      - redis
+      - db 
   redis:
     image: redis
-  mysql:
-    image: mysql:5.7
+  db:
+    image: mariadb:latest
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: password 
