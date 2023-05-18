@@ -1,7 +1,7 @@
 set -ex
 
 # # Wait for mysql to bec available
-# while ! mysqladmin ping -u pm -ppass -h mysql --silent; do
+# while ! mysqladmin ping -u pm -p pass -h mysql --silent; do
 #     echo "Waiting for mysql"
 #     sleep 1
 # done
@@ -15,7 +15,7 @@ set -ex
 
 if [ ! -f ".env" ]; then
 
-    while ! mysqladmin ping -u pm -ppass -h mysql --silent; do
+    while ! mysqladmin ping -u pm --ssl-mode=required -p pass -h mysql --silent; do
         echo "Waiting for mysql"
         sleep 1
     done
